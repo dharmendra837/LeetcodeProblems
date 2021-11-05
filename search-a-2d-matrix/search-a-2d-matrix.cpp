@@ -5,21 +5,21 @@ public:
       //int r= (matrix.size())*(matrix[0].size())-1;
         int x=matrix.size();
         int y=matrix[0].size();
-        int r=x*y-1;
-        while(l<=r)
+        int r=0;
+        int c=y-1;
+        while(r<x && c>=0)
         {
-            int mid=(l+r)/2;
-            if(target == matrix[mid/y][mid%y])
+            if(matrix[r][c]== target)
             {
                 return true;
             }
-            else if(matrix[mid/y][mid%y]>target)
+            else if(matrix[r][c]>target)
             {
-                r=mid-1;
+                c--;
             }
             else
             {
-                l=mid+1;
+                r++;
             }
         }
         
